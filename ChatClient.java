@@ -17,8 +17,6 @@ public class ChatClient {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
 
             Scanner scanner = new Scanner(System.in);
-
-            // Read server messages
             new Thread(() -> {
                 try {
                     String msg;
@@ -29,8 +27,6 @@ public class ChatClient {
                     e.printStackTrace();
                 }
             }).start();
-
-            // Send messages
             while (true) {
                 String message = scanner.nextLine();
                 writer.println(message);
