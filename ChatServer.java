@@ -27,8 +27,6 @@ public class ChatServer {
             e.printStackTrace();
         }
     }
-
-    // Broadcast message to all clients
     protected static void broadcast(String message, ClientHandler excludeUser) {
         for (ClientHandler client : clients) {
             if (client != excludeUser) {
